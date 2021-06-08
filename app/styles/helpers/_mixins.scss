@@ -1,0 +1,80 @@
+@mixin size($width: 100%, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin screen($size) {
+  $desktop: "(min-width: 1024px)";
+  $tablet: "(min-width: 768px) and (max-width: 1023px)";
+  $mobile: "(max-width: 767px)";
+  @if $size == desktop {
+    @media only screen and #{$desktop} {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  } @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}
+@mixin max-width($breakpoint) {
+  @media screen and(max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin min-width($breakpoint) {
+  @media screen and(min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin position-center(
+  $position: "absolute",
+  $axis: "both",
+  $start: none,
+  $value: 0
+) {
+  position: $position;
+  @if $start != none {
+    #{$start}: $value;
+  }
+  @if $axis == x {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $axis == y {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@mixin position-full($position: "absolute") {
+  position: $position;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@mixin flex-box(
+  $align-items: center,
+  $justify-content: center,
+  $direction: row,
+  $wrap: nowrap,
+  $flex: flex
+) {
+  display: $flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}

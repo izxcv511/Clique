@@ -1,0 +1,85 @@
+.main {
+  padding-top: 2.5rem;
+  & .post {
+    column-count: 5;
+    column-gap: 3rem;
+    &__item {
+      --padding-left: 1.3rem;
+      break-inside: avoid;
+      margin-bottom: 2.5rem;
+
+      border-radius: 0.6rem;
+      box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, 0.164);
+      background-color: $bg-secondary-color;
+      color: $text-primary-color;
+
+      overflow: hidden;
+    }
+    &__image {
+      width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    &__title {
+      display: inline-block;
+
+      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
+      padding: 0 var(--padding-left);
+
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    &__desc {
+      padding: 0 var(--padding-left);
+
+      font-size: 1.8rem;
+
+      cursor: pointer;
+    }
+    &__category,
+    &__footer {
+      color: $text-third-color;
+    }
+    &__category {
+      display: inline-block;
+
+      margin-top: 1.8rem;
+      margin-bottom: 2rem;
+      padding-left: var(--padding-left);
+      font-size: 1.2rem;
+    }
+    &__footer {
+      @include flex-box(center, space-between);
+      padding: 0.7rem var(--padding-left);
+      border-top: 1px solid $text-third-color;
+
+      font-size: 1.4rem;
+    }
+    &__time {
+      width: calc(60% - 0.5rem);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &-interactive {
+      @include flex-box(center, flex-end);
+      &__number {
+        padding: 0 0.5rem;
+      }
+    }
+  }
+  @include screen(tablet) {
+    & .post {
+      column-count: 3;
+    }
+  }
+  @include screen(mobile) {
+    margin-top: 15rem;
+    & .post {
+      column-count: 2;
+      column-gap: 4rem;
+    }
+  }
+}

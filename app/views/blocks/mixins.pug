@@ -1,0 +1,19 @@
+mixin post-item(image="", title="", desc="", category="", time="", firstnumber="", secondnumber="")
+	article.post__item 
+		img.post__image(src= image alt=title)
+		span.post__title= title
+		p.post__desc= desc
+		span.post__category= category 
+		.post__footer 
+			span.post__time= time 
+			.post-interactive
+				.post-interactive__item 
+					i.fas.fa-heart.post-interactive__icon 
+					span.post-interactive__number= firstnumber
+				.post-interactive__item 
+					i.fas.fa-comment.post-interactive__icon 
+					span.post-interactive__number= secondnumber
+
+mixin nav-item(content="", link="#")
+	li.nav-item 
+		a.nav-item__link(href= link)= content

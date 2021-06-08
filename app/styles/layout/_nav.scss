@@ -1,0 +1,28 @@
+.nav {
+  margin-top: 8.5rem;
+
+  background-color: #fafaf9;
+  &__list {
+    @include flex-box(center, space-between);
+    padding: 2.5rem 20rem;
+
+    color: $text-primary-color;
+
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  &-item {
+    &:hover {
+      color: $user-primary-color;
+    }
+  }
+  @include screen(tablet) {
+    margin-top: 15rem;
+    &__list {
+      padding: 2.5rem 8rem;
+    }
+  }
+  @include screen(mobile) {
+    display: none;
+  }
+}
