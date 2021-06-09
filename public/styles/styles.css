@@ -259,28 +259,28 @@ html {
         -moz-column-gap: 4rem;
         column-gap: 4rem; } }
 
-.login {
+.authenticate {
   min-height: 100vh;
   background-image: url("../images/img-login-bg-0.png"), url("../images/img-login-bg.png");
   background-repeat: no-repeat;
   background-size: cover; }
-  .login .header {
+  .authenticate .header {
     position: relative;
     margin-top: 4.3rem;
     -webkit-box-shadow: none;
     box-shadow: none;
     background: none; }
-  .login .header__content {
+  .authenticate .header__content {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-  .login .header-search,
-  .login .header__selects {
+  .authenticate .header-search,
+  .authenticate .header__selects {
     display: none; }
   @media screen and (max-width: 767px) {
-    .login .container {
+    .authenticate .container {
       padding: 0; }
-    .login .header {
+    .authenticate .header {
       margin-top: 1rem; } }
 
 .btn--green {
@@ -288,6 +288,28 @@ html {
   border: none;
   border-radius: 0.5rem;
   background-color: #2f9a4c; }
+
+.btn--none {
+  outline: none;
+  border: 1px solid #c0c9d5;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: #c0c9d5; }
+
+.sign-in-form__button, .register-form__button {
+  margin-top: 0.4rem;
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  cursor: pointer; }
+
+.register-form__button {
+  margin-bottom: 1.3rem; }
+
+@media screen and (min-width: 767px) {
+  .register-form__button {
+    width: calc(50% - 0.7rem); } }
 
 .header-search__input {
   width: 100%;
@@ -320,41 +342,49 @@ html {
     color: #707070;
     text-transform: capitalize; }
 
-.sign-in-form__item {
-  position: relative; }
+.sign-in-form__item, .register-form__item {
+  margin-bottom: 1.3rem; }
 
-.sign-in-form__input {
+.sign-in-form__content, .register-form__content {
+  position: relative;
+  margin-bottom: -3.6rem;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear; }
+
+.sign-in-form__input, .register-form__input {
   width: 100%;
   height: 6rem;
   padding: 2rem;
-  margin-bottom: 1.3rem;
   background-color: #ffffff;
   -webkit-box-shadow: inset 0 0 0 10rem #ffffff, 0 0 5px 0px rgba(0, 0, 0, 0.438);
   box-shadow: inset 0 0 0 10rem #ffffff, 0 0 5px 0px rgba(0, 0, 0, 0.438);
   border-radius: 0.5rem;
-  border: none;
+  border: 2px solid transparent;
   outline: none;
   color: #000000;
   font-size: 1.6rem; }
-  .sign-in-form__input::-webkit-input-placeholder {
+  .sign-in-form__input::-webkit-input-placeholder, .register-form__input::-webkit-input-placeholder {
     opacity: 0;
     visibility: hidden; }
-  .sign-in-form__input::-moz-placeholder {
+  .sign-in-form__input::-moz-placeholder, .register-form__input::-moz-placeholder {
     opacity: 0;
     visibility: hidden; }
-  .sign-in-form__input::-ms-input-placeholder {
+  .sign-in-form__input::-ms-input-placeholder, .register-form__input::-ms-input-placeholder {
     opacity: 0;
     visibility: hidden; }
-  .sign-in-form__input::placeholder {
+  .sign-in-form__input::placeholder, .register-form__input::placeholder {
     opacity: 0;
     visibility: hidden; }
-  .sign-in-form__input:focus ~ .sign-in-form__label,
-  .sign-in-form__input:not(:placeholder-shown) ~ .sign-in-form__label {
+  .sign-in-form__input:focus ~ .sign-in-form__label, .register-form__input:focus ~ .sign-in-form__label, .sign-in-form__input:focus ~ .register-form__label, .register-form__input:focus ~ .register-form__label,
+  .sign-in-form__input:not(:placeholder-shown) ~ .sign-in-form__label,
+  .register-form__input:not(:placeholder-shown) ~ .sign-in-form__label,
+  .sign-in-form__input:not(:placeholder-shown) ~ .register-form__label,
+  .register-form__input:not(:placeholder-shown) ~ .register-form__label {
     font-size: 1.2rem;
-    -webkit-transform: translate(-1rem, calc(-1 * (50% + 2.4rem)));
-    transform: translate(-1rem, calc(-1 * (50% + 2.4rem))); }
+    -webkit-transform: translate(-1rem, calc(-1 * (50% + 2.2rem)));
+    transform: translate(-1rem, calc(-1 * (50% + 2.2rem))); }
 
-.sign-in-form__label {
+.sign-in-form__label, .register-form__label {
   position: absolute;
   left: 2rem;
   top: 50%;
@@ -366,13 +396,23 @@ html {
   -webkit-transition: all 0.25s linear;
   transition: all 0.25s linear; }
 
-.sign-in-form__button {
-  margin-top: 1.7rem;
-  width: 100%;
-  height: 4.5rem;
+.sign-in-form__invalid, .register-form__invalid {
+  padding: 1.4rem 0.8rem 0.6rem;
+  color: #fd3332;
+  text-align: start;
   font-size: 1.6rem;
-  text-transform: capitalize;
-  cursor: pointer; }
+  opacity: 0;
+  visibility: hidden; }
+
+.sign-in-form .invalid .sign-in-form__content, .sign-in-form .invalid .register-form__content {
+  margin-bottom: 0; }
+
+.sign-in-form .invalid .sign-in-form__input, .sign-in-form .invalid .register-form__input {
+  border-color: #fd3332; }
+
+.sign-in-form .invalid .sign-in-form__invalid, .sign-in-form .invalid .register-form__invalid {
+  opacity: 1;
+  visibility: visible; }
 
 .sign-in-social__item {
   position: relative;
@@ -400,12 +440,29 @@ html {
   font-size: 1.6rem;
   text-transform: capitalize; }
 
+.register-form__item.register-form__desc {
+  width: 100%; }
+  .register-form__item.register-form__desc .register-form__content {
+    margin-bottom: 0; }
+
+.register-form__desc {
+  margin-bottom: 2.6rem; }
+  .register-form__desc textarea {
+    height: 9rem;
+    resize: none; }
+    .register-form__desc textarea:focus ~ .sign-in-form__label, .register-form__desc textarea:focus ~ .register-form__label,
+    .register-form__desc textarea:not(:placeholder-shown) ~ .sign-in-form__label,
+    .register-form__desc textarea:not(:placeholder-shown) ~ .register-form__label {
+      font-size: 1.2rem;
+      -webkit-transform: translate(-1rem, calc(-1 * (50% + 3.8rem)));
+      transform: translate(-1rem, calc(-1 * (50% + 3.8rem))); }
+
 .sign-in {
   --content-padding: 5.5rem 6rem 3.3rem;
   --content-margin: 8.3rem auto 5rem;
   --title-margin-bottom: 4rem;
   --bottom-margin: 5.2rem auto 5rem; }
-  .sign-in__content {
+  .sign-in__content, .register__content {
     margin: var(--content-margin);
     padding: var(--content-padding);
     width: 100%;
@@ -413,7 +470,7 @@ html {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     font-size: 1.6rem; }
-  .sign-in__title {
+  .sign-in__title, .register__title {
     margin-bottom: var(--title-margin-bottom);
     font-size: 3.6rem;
     font-weight: bold; }
@@ -448,11 +505,11 @@ html {
       top: 50%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%); }
-  .sign-in__register {
+  .sign-in__register, .register__sign-in {
     margin: 3.3rem auto;
     text-align: center;
     text-transform: capitalize; }
-    .sign-in__register a {
+    .sign-in__register a, .register__sign-in a {
       color: #e60a17;
       text-decoration: underline;
       font-weight: bold; }
@@ -470,5 +527,39 @@ html {
       --content-margin: 1rem auto 2rem;
       --title-margin-bottom: 2rem;
       --bottom-margin: 1rem auto 3rem; }
-      .sign-in__title {
+      .sign-in__title, .register__title {
         text-align: center; } }
+
+.register {
+  --content-padding: 2rem 2rem 1rem;
+  --content-margin: 1rem auto 2rem;
+  --title-margin-bottom: 2rem;
+  --bottom-margin: 1rem auto 3rem; }
+  .register__content {
+    max-width: 93rem; }
+  .register-form {
+    text-align: center; }
+  @media screen and (min-width: 767px) {
+    .register {
+      --content-padding: 5.5rem 6rem 3.3rem;
+      --content-margin: 8.3rem auto 5rem;
+      --title-margin-bottom: 4rem;
+      --bottom-margin: 5.2rem auto 5rem; }
+      .register-form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+        .register-form__item {
+          width: calc(50% - 0.75rem); } }

@@ -3,8 +3,8 @@ main.sign-in
         .sign-in__content
             h1.sign-in__title Sign in
             form.sign-in-form(action="" )
-                +sign-in-form-item("email")
-                +sign-in-form-item("password")
+                +sign-in-form-item("email", "Invalid email format").sign-in__email
+                +sign-in-form-item("password", "Invalid password format").sign-in__password
                 +button("log in","submit").sign-in-form__button.btn--green
                 a(href="#").sign-in-form__forgot Forgot password? 
             h2.sign-in__caption Or 

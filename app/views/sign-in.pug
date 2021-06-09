@@ -1,8 +1,11 @@
-extend  layout/login-layout
+extend  layout/home-layout
 
 block vars 
 	-title = 'Clique'
-	-bodyClass = 'login'
+	-bodyClass = 'authenticate'
 	-favicon= 'images/img-clique-favicon.png'
 block container
 	include blocks/sign-in-main
+block layer 
+	script(src="scripts/sign-in.js" )
+

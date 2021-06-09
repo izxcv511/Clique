@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Clique</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <link rel="icon" href="images/img-clique-favicon.png" type="image/x-icon" sizes="16x16">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="styles/fontawesome.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body class="authenticate">
+    <div class="wrapper">
+      <header class="header"> 
+        <div class="container"> 
+          <div class="header__content">
+            <div class="header-search"> <i class="far fa-search header-search__icon"></i>
+              <input class="header-search__input" type="email" name="email" placeholder="Search talent">
+            </div><a class="header__logo"><img class="header__image" src="images/img-header-logo.png"></a>
+            <div class="header__selects">
+              <div class="header-selected"> <i class="fas fa-filter header-selected__icon"></i></div>
+              <div class="header-selected"> <i class="fas fa-bell header-selected__icon"></i></div>
+              <div class="header-selected"> <i class="fas fa-plus header-selected__icon"></i></div>
+              <div class="header-user"> <img class="header-user__image" src="images/img-header-user.png"><i class="fas fa-caret-down header-user__icon"></i></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="register">
+        <div class="container"> 
+          <div class="register__content">
+            <h1 class="register__title">Register</h1>
+            <form class="register-form" action="">
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="text" name="talent name" placeholder="talent name" id="talent-name"/>
+                  <label class="register-form__label" for="talent-name">talent name</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid talent name format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="url" name="website" placeholder="website" id="website"/>
+                  <label class="register-form__label" for="website">website</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid website format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="text" name="contact" placeholder="contact" id="contact"/>
+                  <label class="register-form__label" for="contact">contact</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid contact format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="url" name="facebook" placeholder="facebook" id="facebook"/>
+                  <label class="register-form__label" for="facebook">facebook</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid facebook format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="tel" name="phone" placeholder="phone" id="phone"/>
+                  <label class="register-form__label" for="phone">phone</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid phone format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="url" name="instagram" placeholder="instagram" id="instagram"/>
+                  <label class="register-form__label" for="instagram">instagram</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid instagram format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="email" name="email" placeholder="email" id="email"/>
+                  <label class="register-form__label" for="email">email</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid email format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="url" name="twitter" placeholder="twitter" id="twitter"/>
+                  <label class="register-form__label" for="twitter">twitter</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid twitter format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="password" name="password" placeholder="password" id="password"/>
+                  <label class="register-form__label" for="password">password</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid password format</p>
+                </div>
+              </div>
+              <div class="register-form__item">
+                <div class="register-form__content"> 
+                  <input class="register-form__input" type="password" name="confirm password" placeholder="confirm password" id="confirm-password"/>
+                  <label class="register-form__label" for="confirm-password">confirm password</label>
+                </div>
+                <div class="register-form__invalid"> 
+                  <p>Invalid confirm password format</p>
+                </div>
+              </div>
+              <div class="register-form__item register-form__desc">
+                <div class="register-form__content">
+                  <textarea class="register-form__input" placeholder="Description of talent" id="desc"></textarea>
+                  <label class="register-form__label" for="desc">Description of talent</label>
+                </div>
+              </div>
+              <button class="register-form__button btn--none" type="reset">Back</button>
+              <button class="register-form__button btn--green" type="submit">Next</button>
+              <p class="register__sign-in">Already have a Clique account? <a href="login">Sign in    </a></p>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="scripts/constant.js"></script>
+    <script src="scripts/validate.js"></script>
+  </body>
+</html>

@@ -1,10 +1,3 @@
-.btn--green {
-  outline: none;
-  border: none;
-  border-radius: 0.5rem;
-
-  background-color: $user-secondary-color;
-}
 .header-search__input {
   width: 100%;
   height: 100%;
@@ -26,22 +19,28 @@
     text-transform: capitalize;
   }
 }
-
+// sign in form
 .sign-in-form {
   &__item {
+    margin-bottom: 1.3rem;
+  }
+  &__content {
     position: relative;
+
+    margin-bottom: -3.6rem;
+
+    transition: all 0.25s linear;
   }
   &__input {
     width: 100%;
     height: 6rem;
     padding: 2rem;
-    margin-bottom: 1.3rem;
 
     background-color: $bg-primary-color;
     box-shadow: inset 0 0 0 10rem $bg-primary-color,
       0 0 5px 0px rgba(0, 0, 0, 0.438);
     border-radius: 0.5rem;
-    border: none;
+    border: 2px solid transparent;
     outline: none;
     color: $user-black-color;
 
@@ -53,7 +52,7 @@
     &:focus ~ .sign-in-form__label,
     &:not(:placeholder-shown) ~ .sign-in-form__label {
       font-size: 1.2rem;
-      transform: translate(-1rem, calc(-1 * (50% + 2.4rem)));
+      transform: translate(-1rem, calc(-1 * (50% + 2.2rem)));
     }
   }
   &__label {
@@ -66,17 +65,31 @@
 
     transition: all 0.25s linear;
   }
-  &__button {
-    margin-top: 1.7rem;
-    width: 100%;
-    height: 4.5rem;
+  &__invalid {
+    padding: 1.4rem 0.8rem 0.6rem;
 
+    color: #fd3332;
+
+    text-align: start;
     font-size: 1.6rem;
-    text-transform: capitalize;
 
-    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .invalid {
+    .sign-in-form__content {
+      margin-bottom: 0;
+    }
+    .sign-in-form__input {
+      border-color: #fd3332;
+    }
+    .sign-in-form__invalid {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
+
 .sign-in-social {
   &__item {
     position: relative;
@@ -104,5 +117,42 @@
   &__text {
     font-size: 1.6rem;
     text-transform: capitalize;
+  }
+}
+
+// register form
+.register-form {
+  &__item {
+    @extend .sign-in-form__item;
+  }
+  &__content {
+    @extend .sign-in-form__content;
+  }
+  &__input {
+    @extend .sign-in-form__input;
+  }
+  &__label {
+    @extend .sign-in-form__label;
+  }
+  &__invalid {
+    @extend .sign-in-form__invalid;
+  }
+  &__item.register-form__desc {
+    width: 100%;
+    & .register-form__content {
+      margin-bottom: 0;
+    }
+  }
+  &__desc {
+    margin-bottom: 2.6rem;
+    & textarea {
+      height: 9rem;
+      resize: none;
+      &:focus ~ .sign-in-form__label,
+      &:not(:placeholder-shown) ~ .sign-in-form__label {
+        font-size: 1.2rem;
+        transform: translate(-1rem, calc(-1 * (50% + 3.8rem)));
+      }
+    }
   }
 }

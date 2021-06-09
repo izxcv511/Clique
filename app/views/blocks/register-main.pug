@@ -1,0 +1,23 @@
+main.register
+	.container 
+		.register__content
+			h1.register__title Register
+			form.register-form(action="" )
+				+register-form-item("talent name", "text", "talent-name", "Invalid talent name format")
+				+register-form-item("website", "url", "website", "Invalid website format")
+				+register-form-item("contact", "text", "contact", "Invalid contact format")
+				+register-form-item("facebook", "url", "facebook", "Invalid facebook format")
+				+register-form-item("phone", "tel", "phone", "Invalid phone format")
+				+register-form-item("instagram", "url", "instagram", "Invalid instagram format")
+				+register-form-item("email", "email", "email", "Invalid email format")
+				+register-form-item("twitter", "url", "twitter", "Invalid twitter format")
+				+register-form-item("password", "password", "password", "Invalid password format")
+				+register-form-item("confirm password", "password", "confirm-password", "Invalid confirm password format")
+				.register-form__item.register-form__desc
+					.register-form__content
+						textarea(placeholder="Description of talent" id="desc").register-form__input
+						label(for='desc').register-form__label Description of talent
+				+button("Back","reset").register-form__button.btn--none
+				+button("Next","submit").register-form__button.btn--green
+				p.register__sign-in Already have a Clique account? 
+					a(href="login") Sign in    

@@ -18,10 +18,21 @@ mixin nav-item(content="" ,link="#")
 	li.nav-item 
 		a.nav-item__link(href= link)= content
 
-mixin sign-in-form-item(content="")
-	.sign-in-form__item
-		input.sign-in-form__input(type= content name= content placeholder= content id =  content)
-		label.sign-in-form__label(for= content)= content
+mixin sign-in-form-item(content="" ,error="")
+	.sign-in-form__item(class = attributes.class)
+		.sign-in-form__content 
+			input.sign-in-form__input(type= content name= content placeholder= content id =  content)
+			label.sign-in-form__label(for= content)= content
+		.sign-in-form__invalid 
+			p= error
+
+mixin register-form-item(content="" ,typeinput="" ,id="" ,error="")
+	.register-form__item(class = attributes.class)
+		.register-form__content 
+			input.register-form__input(type= typeinput name= content placeholder= content id =  id)
+			label.register-form__label(for= id)= content
+		.register-form__invalid 
+			p= error
 
 mixin button(content="" ,type="")
 	button(class=attributes.class type= type)= content

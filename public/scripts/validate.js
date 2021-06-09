@@ -1,0 +1,1 @@
+"use strict";function validateEmail(t){return regexEmail.test(String(t).toLowerCase())}function validatePassword(t){return regexPassword.test(t)}

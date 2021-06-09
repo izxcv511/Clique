@@ -1,0 +1,31 @@
+.register {
+  --content-padding: 2rem 2rem 1rem;
+  --content-margin: 1rem auto 2rem;
+  --title-margin-bottom: 2rem;
+  --bottom-margin: 1rem auto 3rem;
+  &__content {
+    @extend .sign-in__content;
+    max-width: 93rem;
+  }
+  &__title {
+    @extend .sign-in__title;
+  }
+  &-form {
+    text-align: center;
+  }
+  &__sign-in {
+    @extend .sign-in__register;
+  }
+  @include min-width(767px) {
+    --content-padding: 5.5rem 6rem 3.3rem;
+    --content-margin: 8.3rem auto 5rem;
+    --title-margin-bottom: 4rem;
+    --bottom-margin: 5.2rem auto 5rem;
+    &-form {
+      @include flex-box(center, space-between, row, wrap);
+      &__item{
+          width: calc(50% - 0.75rem);
+      }
+    }
+  }
+}

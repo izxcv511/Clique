@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles/fontawesome.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
-  <body class="login">
+  <body class="authenticate">
     <div class="wrapper">
       <header class="header"> 
         <div class="container"> 
@@ -35,13 +35,23 @@
           <div class="sign-in__content">
             <h1 class="sign-in__title">Sign in</h1>
             <form class="sign-in-form" action="">
-              <div class="sign-in-form__item">
-                <input class="sign-in-form__input" type="email" name="email" placeholder="email" id="email"/>
-                <label class="sign-in-form__label" for="email">email</label>
+              <div class="sign-in-form__item sign-in__email">
+                <div class="sign-in-form__content"> 
+                  <input class="sign-in-form__input" type="email" name="email" placeholder="email" id="email"/>
+                  <label class="sign-in-form__label" for="email">email</label>
+                </div>
+                <div class="sign-in-form__invalid"> 
+                  <p>Invalid email format</p>
+                </div>
               </div>
-              <div class="sign-in-form__item">
-                <input class="sign-in-form__input" type="password" name="password" placeholder="password" id="password"/>
-                <label class="sign-in-form__label" for="password">password</label>
+              <div class="sign-in-form__item sign-in__password">
+                <div class="sign-in-form__content"> 
+                  <input class="sign-in-form__input" type="password" name="password" placeholder="password" id="password"/>
+                  <label class="sign-in-form__label" for="password">password</label>
+                </div>
+                <div class="sign-in-form__invalid"> 
+                  <p>Invalid password format</p>
+                </div>
               </div>
               <button class="sign-in-form__button btn--green" type="submit">log in</button><a class="sign-in-form__forgot" href="#">Forgot password? </a>
             </form>
@@ -61,6 +71,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/constant.js"></script>
+    <script src="scripts/validate.js"></script>
+    <script src="scripts/sign-in.js"></script>
   </body>
 </html>
