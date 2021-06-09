@@ -29,7 +29,7 @@ function clickButtonSignIn() {
       itemSignInPassword.classList.remove("invalid");
     }
     if (isValidateEmail && isValidatePassword) {
-      window.open("../home-page.html");
+      window.open("home-page.html");
     }
   });
 }
