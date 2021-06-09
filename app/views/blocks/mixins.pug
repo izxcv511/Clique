@@ -1,4 +1,4 @@
-mixin post-item(image="", title="", desc="", category="", time="", firstnumber="", secondnumber="")
+mixin post-item(image="" ,title="" ,desc="" ,category="" ,time="" ,firstnumber="" ,secondnumber="")
 	article.post__item 
 		img.post__image(src= image alt=title)
 		span.post__title= title
@@ -14,6 +14,19 @@ mixin post-item(image="", title="", desc="", category="", time="", firstnumber="
 					i.fas.fa-comment.post-interactive__icon 
 					span.post-interactive__number= secondnumber
 
-mixin nav-item(content="", link="#")
+mixin nav-item(content="" ,link="#")
 	li.nav-item 
 		a.nav-item__link(href= link)= content
+
+mixin sign-in-form-item(content="")
+	.sign-in-form__item
+		input.sign-in-form__input(type= content name= content placeholder= content id =  content)
+		label.sign-in-form__label(for= content)= content
+
+mixin button(content="" ,type="")
+	button(class=attributes.class type= type)= content
+
+mixin social-item(icon="" ,content="")
+	button.sign-in-social__item(class= attributes.class)
+		i.sign-in-social__icon(class = icon)
+		span.sign-in-social__text= content

@@ -1,3 +1,10 @@
+.btn--green {
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+
+  background-color: $user-secondary-color;
+}
 .header-search__input {
   width: 100%;
   height: 100%;
@@ -16,6 +23,86 @@
   &::placeholder {
     font-size: 1.6rem;
     color: #707070;
+    text-transform: capitalize;
+  }
+}
+
+.sign-in-form {
+  &__item {
+    position: relative;
+  }
+  &__input {
+    width: 100%;
+    height: 6rem;
+    padding: 2rem;
+    margin-bottom: 1.3rem;
+
+    background-color: $bg-primary-color;
+    box-shadow: inset 0 0 0 10rem $bg-primary-color,
+      0 0 5px 0px rgba(0, 0, 0, 0.438);
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    color: $user-black-color;
+
+    font-size: 1.6rem;
+    &::placeholder {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:focus ~ .sign-in-form__label,
+    &:not(:placeholder-shown) ~ .sign-in-form__label {
+      font-size: 1.2rem;
+      transform: translate(-1rem, calc(-1 * (50% + 2.4rem)));
+    }
+  }
+  &__label {
+    @include position-center(absolute, y, left, 2rem);
+
+    color: $user-black-color;
+
+    font-size: 1.6rem;
+    text-transform: capitalize;
+
+    transition: all 0.25s linear;
+  }
+  &__button {
+    margin-top: 1.7rem;
+    width: 100%;
+    height: 4.5rem;
+
+    font-size: 1.6rem;
+    text-transform: capitalize;
+
+    cursor: pointer;
+  }
+}
+.sign-in-social {
+  &__item {
+    position: relative;
+
+    width: 100%;
+    height: 4.5rem;
+    margin-bottom: 1rem;
+
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+    &--twitter {
+      background-color: #3ca6cc;
+    }
+    &--facebook {
+      background-color: #264f88;
+    }
+  }
+  &__icon {
+    @include position-center(absolute, y, left, 1.5rem);
+    font-size: 2rem;
+  }
+  &__text {
+    font-size: 1.6rem;
     text-transform: capitalize;
   }
 }

@@ -78,3 +78,16 @@
   flex-direction: $direction;
   flex-wrap: $wrap;
 }
+@mixin text-clamp($rows: 1, $width: 100%) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $rows;
+  width: $width;
+  max-width: $width;
+
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: pre-wrap;
+
+  overflow: hidden;
+}

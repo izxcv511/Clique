@@ -1,0 +1,88 @@
+.sign-in {
+  --content-padding: 5.5rem 6rem 3.3rem;
+  --content-margin: 8.3rem auto 5rem;
+  --title-margin-bottom: 4rem;
+  --bottom-margin: 5.2rem auto 5rem;
+  &__content {
+    margin: var(--content-margin);
+    padding: var(--content-padding);
+    width: 100%;
+    max-width: 45rem;
+
+    background-color: rgba(black, 0.6);
+    color: white;
+
+    font-size: 1.6rem;
+  }
+  &__title {
+    margin-bottom: var(--title-margin-bottom);
+
+    font-size: 3.6rem;
+    font-weight: bold;
+  }
+  &-form {
+    text-align: end;
+    &__forgot {
+      display: inline-block;
+      margin-top: 1.4rem;
+      margin-bottom: 1rem;
+
+      font-size: 1.2rem;
+      text-decoration: underline;
+    }
+  }
+  &__caption {
+    position: relative;
+    margin-bottom: 1.8rem;
+
+    color: #a8a8a8;
+
+    text-align: center;
+    text-transform: uppercase;
+    &::after,
+    &::before {
+      content: "";
+      @include size(12rem, 1px);
+      background-color: #a8a8a875;
+    }
+    &::after {
+      @include position-center(absolute, y, left);
+    }
+    &::before {
+      @include position-center(absolute, y, right);
+    }
+  }
+  &__register {
+    margin: 3.3rem auto;
+
+    text-align: center;
+    text-transform: capitalize;
+    & a {
+      color: $user-primary-color;
+
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+  &__bottom {
+    margin: var(--bottom-margin);
+
+    color: #434444;
+
+    font-size: 1.6rem;
+    text-align: center;
+    & a {
+      color: $bg-primary-color;
+      font-weight: bold;
+    }
+  }
+  @include max-width(767px) {
+    --content-padding: 2rem 2rem 1rem;
+    --content-margin: 1rem auto 2rem;
+    --title-margin-bottom: 2rem;
+    --bottom-margin: 1rem auto 3rem;
+    &__title{
+      text-align: center;
+    }
+  }
+}

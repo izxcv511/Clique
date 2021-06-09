@@ -1,0 +1,31 @@
+.login {
+  min-height: 100vh;
+
+  background-image: url("../images/img-login-bg-0.png"),
+    url("../images/img-login-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  & .header {
+    position: relative;
+    margin-top: 4.3rem;
+
+    box-shadow: none;
+    background: none;
+  }
+  & .header__content {
+    justify-content: center;
+  }
+  & .header-search,
+  & .header__selects {
+    display: none;
+  }
+  @include max-width(767px) {
+    .container {
+      padding: 0;
+    }
+    & .header {
+      margin-top: 1rem;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Clique</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <link rel="icon" href="images/img-clique-favicon.png" type="image/x-icon" sizes="16x16">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="styles/fontawesome.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body class="login">
+    <div class="wrapper">
+      <header class="header"> 
+        <div class="container"> 
+          <div class="header__content">
+            <div class="header-search"> <i class="far fa-search header-search__icon"></i>
+              <input class="header-search__input" type="email" name="email" placeholder="Search talent">
+            </div><a class="header__logo"><img class="header__image" src="images/img-header-logo.png"></a>
+            <div class="header__selects">
+              <div class="header-selected"> <i class="fas fa-filter header-selected__icon"></i></div>
+              <div class="header-selected"> <i class="fas fa-bell header-selected__icon"></i></div>
+              <div class="header-selected"> <i class="fas fa-plus header-selected__icon"></i></div>
+              <div class="header-user"> <img class="header-user__image" src="images/img-header-user.png"><i class="fas fa-caret-down header-user__icon"></i></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="sign-in">
+        <div class="container"> 
+          <div class="sign-in__content">
+            <h1 class="sign-in__title">Sign in</h1>
+            <form class="sign-in-form" action="">
+              <div class="sign-in-form__item">
+                <input class="sign-in-form__input" type="email" name="email" placeholder="email" id="email"/>
+                <label class="sign-in-form__label" for="email">email</label>
+              </div>
+              <div class="sign-in-form__item">
+                <input class="sign-in-form__input" type="password" name="password" placeholder="password" id="password"/>
+                <label class="sign-in-form__label" for="password">password</label>
+              </div>
+              <button class="sign-in-form__button btn--green" type="submit">log in</button><a class="sign-in-form__forgot" href="#">Forgot password? </a>
+            </form>
+            <h2 class="sign-in__caption">Or </h2>
+            <div class="sign-in-social">
+              <button class="sign-in-social__item sign-in-social__item--twitter"><i class="sign-in-social__icon fab fa-twitter"></i><span class="sign-in-social__text">Twitter log in</span></button>
+              <button class="sign-in-social__item sign-in-social__item--facebook"><i class="sign-in-social__icon fab fa-facebook-square"></i><span class="sign-in-social__text">Facebook log in</span></button>
+            </div>
+            <p class="sign-in__register">New to eko? <a href="register">Register </a></p>
+          </div>
+          <div class="sign-in__bottom"> 
+            <p class="sign-in__vender">Are you Vender? <a href="#">Login</a></p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
