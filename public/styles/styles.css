@@ -135,7 +135,7 @@ html {
     color: #536876;
     font-weight: bold;
     font-size: 1.6rem; }
-  .nav-item:hover {
+  .nav-item__link:hover {
     color: #e60a17; }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .nav {
@@ -157,6 +157,7 @@ html {
     column-gap: 3rem; }
     .main .post__item {
       --padding-left: 1.3rem;
+      display: inline-block;
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
       break-inside: avoid;
@@ -200,7 +201,8 @@ html {
       margin-top: 1.8rem;
       margin-bottom: 2rem;
       padding-left: var(--padding-left);
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      text-transform: capitalize; }
     .main .post__footer {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -243,6 +245,8 @@ html {
       flex-wrap: nowrap; }
       .main .post-interactive__number {
         padding: 0 0.5rem; }
+      .main .post-interactive .isFavorite > i {
+        color: #e60a17; }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .main .post {
       -webkit-column-count: 3;

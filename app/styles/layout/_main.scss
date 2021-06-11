@@ -5,6 +5,7 @@
     column-gap: 3rem;
     &__item {
       --padding-left: 1.3rem;
+      display: inline-block;
       break-inside: avoid;
       margin-bottom: 2.5rem;
 
@@ -49,7 +50,9 @@
       margin-top: 1.8rem;
       margin-bottom: 2rem;
       padding-left: var(--padding-left);
+
       font-size: 1.2rem;
+      text-transform: capitalize;
     }
     &__footer {
       @include flex-box(center, space-between);
@@ -68,6 +71,9 @@
       @include flex-box(center, flex-end);
       &__number {
         padding: 0 0.5rem;
+      }
+      & .isFavorite > i {
+        color: $user-primary-color;
       }
     }
   }

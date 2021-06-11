@@ -7,16 +7,16 @@ mixin post-item(image="" ,title="" ,desc="" ,category="" ,time="" ,firstnumber="
 		.post__footer 
 			span.post__time= time 
 			.post-interactive
-				.post-interactive__item 
+				.post-interactive__item.interactive-favorite 
 					i.fas.fa-heart.post-interactive__icon 
 					span.post-interactive__number= firstnumber
-				.post-interactive__item 
+				.post-interactive__item.interactive-comment
 					i.fas.fa-comment.post-interactive__icon 
 					span.post-interactive__number= secondnumber
 
 mixin nav-item(content="" ,link="#")
-	li.nav-item 
-		a.nav-item__link(href= link)= content
+	li.nav-item
+		a.nav-item__link(href= link data-category= content)= content
 
 mixin sign-in-form-item(content="" ,error="")
 	.sign-in-form__item(class = attributes.class)
