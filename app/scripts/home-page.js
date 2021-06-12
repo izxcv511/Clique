@@ -1,4 +1,10 @@
-var currPage, listPost, sectionPost, navItems, isFilter, isCategory;
+var currPage,
+  listPost,
+  sectionPost,
+  navItems,
+  isFilter,
+  isCategory,
+  iconInteractiveFavorites;
 document.addEventListener("DOMContentLoaded", function (event) {
   isFilter = false;
   isCategory = null;
@@ -6,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   currPage = 1;
   navItems = document.querySelectorAll(".nav-item");
   sectionPost = document.querySelector(".post");
+
   clickNavItem();
   getListPostHasPaging();
 });
@@ -36,6 +43,7 @@ function getListPostHasPaging() {
       renderPost(post);
     });
   }
+  clickIconInteractiveFavorite();
 }
 
 function renderPost(post) {
@@ -95,7 +103,7 @@ function renderPost(post) {
     divInteractiveComment.classList.add("post-interactive__item");
     divInteractiveComment.innerHTML =
       '<i class="fas fa-comment post-interactive__icon"> </i>';
-    divInteractiveFavorite.classList.add("interactive-comment");
+    divInteractiveComment.classList.add("interactive-comment");
     spanInteractiveComment.classList.add("post-interactive__number");
     spanInteractiveComment.innerText = post.comment;
 
@@ -114,4 +122,24 @@ function renderPost(post) {
 
     sectionPost.appendChild(article);
   }
+}
+function clickIconInteractiveFavorite() {
+  iconInteractiveFavorites = document.querySelectorAll(
+    ".interactive-favorite>i"
+  );
+  Array.from(iconInteractiveFavorites).forEach((element) => {
+    element.addEventListener("click", (e) => {
+      let parentN = e.target.parentNode;
+      let spanFavorite = e.target.nextSibling;
+      let number = parseInt(spanFavorite.innerText);
+      if (number) {
+        number = 0;
+        parentN.classList.remove("isFavorite");
+      } else {
+        number = 1;
+        parentN.classList.add("isFavorite");
+      }
+      spanFavorite.innerText = number;
+    });
+  });
 }

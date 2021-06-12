@@ -72,6 +72,9 @@
       &__number {
         padding: 0 0.5rem;
       }
+      & .interactive-favorite > i {
+        cursor: pointer;
+      }
       & .isFavorite > i {
         color: $user-primary-color;
       }

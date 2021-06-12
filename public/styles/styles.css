@@ -245,6 +245,8 @@ html {
       flex-wrap: nowrap; }
       .main .post-interactive__number {
         padding: 0 0.5rem; }
+      .main .post-interactive .interactive-favorite > i {
+        cursor: pointer; }
       .main .post-interactive .isFavorite > i {
         color: #e60a17; }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
