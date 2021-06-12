@@ -15,11 +15,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   clickNavItem();
   getListPostHasPaging();
+  handleScroll();
 });
 
 function clickNavItem() {
   Array.from(navItems).forEach((element) => {
     element.addEventListener("click", (e) => {
+      currPage = 1;
       isCategory = e.target.dataset.category.toLowerCase();
       isFilter = true;
       getListPostHasPaging();
@@ -28,18 +30,23 @@ function clickNavItem() {
 }
 
 function getListPostHasPaging() {
-  sectionPost.innerHTML = "";
+  if (currPage === 1) {
+    sectionPost.innerHTML = "";
+    listPost = [];
+  }
+  let listNew = [];
   if (isFilter && isCategory) {
-    listPost = db
+    listNew = db
       .filter(function (item) {
         return item.category == isCategory;
       })
-      .slice(0, pagesize);
+      .slice((currPage - 1) * pagesize, currPage * pagesize);
   } else {
-    listPost = db.slice(0, pagesize);
+    listNew = db.slice((currPage - 1) * pagesize, currPage * pagesize);
   }
-  if (listPost) {
-    listPost.forEach(function (post) {
+  listPost = [...listPost, ...listNew];
+  if (listNew) {
+    listNew.forEach(function (post) {
       renderPost(post);
     });
   }
@@ -141,5 +148,17 @@ function clickIconInteractiveFavorite() {
       }
       spanFavorite.innerText = number;
     });
+  });
+}
+
+function handleScroll() {
+  let el = document.querySelector("section.post");
+  window.addEventListener("scroll", () => {
+    if (window.innerHeight + window.scrollY >= el.offsetHeight) {
+      if (currPage < 5) {
+        currPage++;
+        getListPostHasPaging();
+      }
+    }
   });
 }
