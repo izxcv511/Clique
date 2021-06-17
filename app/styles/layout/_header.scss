@@ -53,6 +53,13 @@
     &__icon {
       @include position-center(absolute, y, right);
     }
+    &__image {
+      @include size(4.5rem);
+
+      border-radius: 50%;
+
+      object-fit: cover;
+    }
   }
   @include screen(tablet) {
     &-search,

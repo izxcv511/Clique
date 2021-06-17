@@ -1,0 +1,60 @@
+.alert {
+  position: fixed;
+
+  @include flex-box(center, flex-start);
+
+  bottom: 2rem;
+  right: 5rem;
+
+  padding: 2rem 1rem;
+  width: 40rem;
+  border-left: 0.5rem solid #d18821;
+
+  background-color: #f0ad4e;
+  color: $bg-primary-color;
+
+  font-size: 2rem;
+
+  animation: animationAlert 3s linear 0s 1 forwards;
+  &__icon {
+  }
+  &__content {
+    padding: 0 2rem;
+  }
+  &__title {
+    display: block;
+    font-weight: bold;
+  }
+  &__desc {
+    font-size: 1.4rem;
+  }
+  &--success {
+    border-left: 0.5rem solid #2e6b2e;
+
+    background-color: #449d44;
+  }
+  &--warning {
+    border-left: 0.5rem solid #d18821;
+
+    background-color: #f0ad4e;
+  }
+}
+
+@keyframes animationAlert {
+  0% {
+    right: -50rem;
+    transform: scale(0.8);
+  }
+  30% {
+    right: 5rem;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+}

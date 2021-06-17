@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles/fontawesome.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
-  <body class="authenticate">
+  <body class="home-page">
     <div class="wrapper">
       <header class="header"> 
         <div class="container"> 
@@ -30,41 +30,22 @@
           </div>
         </div>
       </header>
-      <main class="sign-in">
+      <nav class="nav"> 
         <div class="container"> 
-          <div class="sign-in__content">
-            <h1 class="sign-in__title">Sign in</h1>
-            <form class="sign-in-form" action="">
-              <div class="sign-in-form__item sign-in__email">
-                <div class="sign-in-form__content"> 
-                  <input class="sign-in-form__input" type="email" name="email" placeholder="email" id="email"/>
-                  <label class="sign-in-form__label" for="email">email</label>
-                </div>
-                <div class="sign-in-form__invalid"> 
-                  <p>Invalid email format</p>
-                </div>
-              </div>
-              <div class="sign-in-form__item sign-in__password">
-                <div class="sign-in-form__content"> 
-                  <input class="sign-in-form__input" type="password" name="password" placeholder="password" id="password"/>
-                  <label class="sign-in-form__label" for="password">password</label>
-                </div>
-                <div class="sign-in-form__invalid"> 
-                  <p>Invalid password format</p>
-                </div>
-              </div>
-              <button class="sign-in-form__button btn--green" type="submit">log in</button><a class="sign-in-form__forgot" href="#">Forgot password? </a>
-            </form>
-            <h2 class="sign-in__caption">Or </h2>
-            <div class="sign-in-social">
-              <button class="sign-in-social__item sign-in-social__item--twitter"><i class="sign-in-social__icon fab fa-twitter"></i><span class="sign-in-social__text">Twitter log in</span></button>
-              <button class="sign-in-social__item sign-in-social__item--facebook"><i class="sign-in-social__icon fab fa-facebook-square"></i><span class="sign-in-social__text">Facebook log in</span></button>
-            </div>
-            <p class="sign-in__register">New to eko? <a href="register">Register </a></p>
-          </div>
-          <div class="sign-in__bottom"> 
-            <p class="sign-in__vender">Are you Vender? <a href="#">Login</a></p>
-          </div>
+          <ul class="nav__list"> 
+            <li class="nav-item"><a class="nav-item__link" href="#" data-category="News">News</a></li>
+            <li class="nav-item"><a class="nav-item__link" href="#" data-category="Event">Event</a></li>
+            <li class="nav-item"><a class="nav-item__link" href="#" data-category="Result">Result</a></li>
+            <li class="nav-item"><a class="nav-item__link" href="#" data-category="Photo">Photo</a></li>
+            <li class="nav-item"><a class="nav-item__link" href="#" data-category="Video">Video</a></li>
+            <li class="nav-item"><a class="nav-item__link" href="#" data-category="Audio">Audio</a></li>
+            <li class="nav-item"><a class="nav-item__link" href="#" data-category="Status">Status</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main class="main"> 
+        <div class="container"> 
+          <section class="post"></section>
         </div>
       </main>
     </div>
@@ -75,6 +56,7 @@
     <script src="scripts/validate.js"></script>
     <script src="scripts/methodCallAPI.js"></script>
     <script src="scripts/editAlert.js"></script>
-    <script src="scripts/sign-in.js"></script>
+    <script src="scripts/db.js"></script>
+    <script src="scripts/home-page-use-db.js"></script>
   </body>
 </html>

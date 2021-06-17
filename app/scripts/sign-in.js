@@ -3,6 +3,7 @@ var buttonSignIn,
   itemSignInPassword,
   inputEmail,
   inputPassword;
+start();
 document.addEventListener("DOMContentLoaded", function (event) {
   buttonSignIn = document.querySelector(".sign-in-form__button");
   itemSignInEmail = document.querySelector(".sign-in__email");
@@ -29,7 +30,32 @@ function clickButtonSignIn() {
       itemSignInPassword.classList.remove("invalid");
     }
     if (isValidateEmail && isValidatePassword) {
-      window.open("home-page.html");
+      let data = {
+        username: emailVal,
+        password: passwordVal,
+      };
+      login(data, (result) => {
+        if (result.responseData) {
+          localStorage.setItem(CONFIG_USERNAME, emailVal);
+          localStorage.setItem(CONFIG_PASSWORD, passwordVal);
+          window.location.href = "home-page.html";
+        } else {
+          alert(result.error.message);
+        }
+      });
     }
   });
+}
+function start() {
+  let data = {
+    username: localStorage.getItem(CONFIG_USERNAME),
+    password: localStorage.getItem(CONFIG_PASSWORD),
+  };
+  if (data && data.username && data.password) {
+    login(data, (result) => {
+      if (result.responseData) {
+        window.location.href = "home-page.html";
+      }
+    });
+  }
 }

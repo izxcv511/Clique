@@ -99,6 +99,12 @@ html {
       top: 50%;
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%); }
+    .header-user__image {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      -o-object-fit: cover;
+      object-fit: cover; }
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .header-search, .header__selects {
       width: 35%; } }
@@ -283,11 +289,90 @@ html {
   .authenticate .header-search,
   .authenticate .header__selects {
     display: none; }
+  .authenticate .header__logo {
+    width: auto; }
   @media screen and (max-width: 767px) {
     .authenticate .container {
       padding: 0; }
     .authenticate .header {
       margin-top: 1rem; } }
+
+.alert {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  bottom: 2rem;
+  right: 5rem;
+  padding: 2rem 1rem;
+  width: 40rem;
+  border-left: 0.5rem solid #d18821;
+  background-color: #f0ad4e;
+  color: #ffffff;
+  font-size: 2rem;
+  -webkit-animation: animationAlert 3s linear 0s 1 forwards;
+  animation: animationAlert 3s linear 0s 1 forwards; }
+  .alert__content {
+    padding: 0 2rem; }
+  .alert__title {
+    display: block;
+    font-weight: bold; }
+  .alert__desc {
+    font-size: 1.4rem; }
+  .alert--success {
+    border-left: 0.5rem solid #2e6b2e;
+    background-color: #449d44; }
+  .alert--warning {
+    border-left: 0.5rem solid #d18821;
+    background-color: #f0ad4e; }
+
+@-webkit-keyframes animationAlert {
+  0% {
+    right: -50rem;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8); }
+  30% {
+    right: 5rem;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20rem);
+    transform: translateY(20rem); } }
+
+@keyframes animationAlert {
+  0% {
+    right: -50rem;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8); }
+  30% {
+    right: 5rem;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  70% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20rem);
+    transform: translateY(20rem); } }
 
 .btn--green {
   outline: none;

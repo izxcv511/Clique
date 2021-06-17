@@ -20,6 +20,9 @@
   & .header__selects {
     display: none;
   }
+  & .header__logo{
+    width: auto;
+  }
   @include max-width(767px) {
     .container {
       padding: 0;
